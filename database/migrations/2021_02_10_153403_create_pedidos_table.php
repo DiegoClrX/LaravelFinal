@@ -17,12 +17,10 @@ class CreatePedidosTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned()->where('role_id','!=',4);
             $table->bigInteger('restaurante_id')->unsigned();
-            $table->bigInteger('platos_id')->unsigned();
             $table->bigInteger('repartidor_id')->unsigned()->nullable()->where('role_id','=',3);
             $table->string('estado');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('restaurante_id')->references('id')->on('restaurantes')->onDelete('cascade');
-            $table->foreign('platos_id')->references('id')->on('platos')->onDelete('cascade');
             $table->foreign('repartidor_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

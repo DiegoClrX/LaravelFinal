@@ -36,8 +36,7 @@ class PedidoController extends Controller
 
     public function verPedidosNumero($id){
         $pedidos = Pedido::where('restaurante_id','=',$id)->where('estado', '=', 'realizado')->paginate(5);
-        $restaurante_id = $pedidos[0]->restaurante_id;
-        return view('intranet.pedidos', ['pedidos' => $pedidos, 'restaurante_id'=>$restaurante_id]);
+        return view('intranet.pedidos', ['pedidos' => $pedidos, 'restaurante_id'=>$id]);
     }
 
     public function actualizarPedidoRealizado($id){
@@ -47,11 +46,8 @@ class PedidoController extends Controller
         foreach($pedidos as $pedido){
             $pedido->user_id = $pedido->user_id;
             $pedido->restaurante_id = $pedido->restaurante_id;
-            $pedido->platos_id = $pedido->platos_id;
             $pedido->repartidor_id = $pedido->repartidor_id;
             $pedido->estado = 'finalizado';
-            $pedido->cantidad = $pedido->cantidad;
-            $pedido->numPedido = $pedido->numPedido;
             $pedido->save();
         }
 
@@ -65,11 +61,8 @@ class PedidoController extends Controller
         foreach($pedidos as $pedido){
             $pedido->user_id = $pedido->user_id;
             $pedido->restaurante_id = $pedido->restaurante_id;
-            $pedido->platos_id = $pedido->platos_id;
             $pedido->repartidor_id = $pedido->repartidor_id;
             $pedido->estado = 'entregado';
-            $pedido->cantidad = $pedido->cantidad;
-            $pedido->numPedido = $pedido->numPedido;
             $pedido->save();
         }
 
@@ -86,7 +79,7 @@ class PedidoController extends Controller
     public function verPlatosPedido($id){
         $pedido = Pedido::find($id);
         $platos = $pedido->platos;
-        return view('intranet.clientes.platos', ['platos'=>$platos]);
+        return view('intranet.pedido.platos', ['platos'=>$platos]);
 
     }
 
@@ -118,7 +111,6 @@ class PedidoController extends Controller
                     $pedido = new Pedido;
                     $pedido->user_id = Auth::id();
                     $pedido->restaurante_id = $plato->restaurante_id;
-                    $pedido->platos_id = $plato->id;
                     $pedido->repartidor_id = null;
                     $pedido->estado = 'realizado';
                     $pedido->save();

@@ -9,6 +9,10 @@ class Plato extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nombre', 'descripcion', 'foto', 'precio', 'categoria'
+    ];
+
     public function restaurante(){
         return $this->hasMany(Restaurante::class);
     }

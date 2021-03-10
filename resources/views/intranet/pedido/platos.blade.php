@@ -156,7 +156,9 @@ dialog[open] {
                     <div class="p-4 flex">
 
                         {{-- Pagina Anterior --}}
-                        <a href="{{Route('restaurante.index')}}" style="margin-right: -9%">
+                        {{-- <a href="/intranet/restaurante/pedido/{{$platos[0]->restaurante_id}}/verPedidos" style="margin-right: -9%"> --}}
+                        {{-- <a href="/intranet/restaurante/pedido/1/verPedidos" style="margin-right: -9%"> --}}
+                            <a href="">
                             <img width =15% style="margin-right: -10%; margin-top: 12%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik00OTIsMjM2SDY4LjQ0Mmw3MC4xNjQtNjkuODI0YzcuODI5LTcuNzkyLDcuODU5LTIwLjQ1NSwwLjA2Ny0yOC4yODRjLTcuNzkyLTcuODMtMjAuNDU2LTcuODU5LTI4LjI4NS0wLjA2OA0KCQkJbC0xMDQuNTA0LDEwNGMtMC4wMDcsMC4wMDYtMC4wMTIsMC4wMTMtMC4wMTgsMC4wMTljLTcuODA5LDcuNzkyLTcuODM0LDIwLjQ5Ni0wLjAwMiwyOC4zMTRjMC4wMDcsMC4wMDYsMC4wMTIsMC4wMTMsMC4wMTgsMC4wMTkNCgkJCWwxMDQuNTA0LDEwNGM3LjgyOCw3Ljc5LDIwLjQ5Miw3Ljc2MywyOC4yODUtMC4wNjhjNy43OTItNy44MjksNy43NjItMjAuNDkyLTAuMDY3LTI4LjI4NEw2OC40NDIsMjc2SDQ5Mg0KCQkJYzExLjA0NiwwLDIwLTguOTU0LDIwLTIwQzUxMiwyNDQuOTU0LDUwMy4wNDYsMjM2LDQ5MiwyMzZ6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
                         </a>
                         <h1 class="text-3xl" style="text-align: center; margin-top: 1%">
@@ -168,7 +170,6 @@ dialog[open] {
                                     <img class="w-5 h-5 text-white" src="{{ asset('img/pedido.png') }}"/>
                                 </button>
                             </a> --}}
-
                     </div>
                     <div class="px-3 py-4 flex justify-center">
 
@@ -176,35 +177,25 @@ dialog[open] {
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
                             <tbody>
 
-                                @if ($pedidos->count() != 0)
-
                                 <tr class="border-b">
-                                    <th class="text-left p-3 px-5">Cliente</th>
-                                    {{-- <th class="text-left p-3 px-5" style="margin-left: 25%">Image</th> --}}
-                                    <th class="text-left p-3 px-5">Restaurante</th>
-                                    <th class="text-left p-3 px-5">Estado</th>
-                                    <th class="text-left p-3 px-5">Platos</th>
+                                    <th class="text-left p-3 px-5">Nombre</th>
+                                    <th class="text-left p-3 px-5">Descripcion</th>
+                                    <th class="text-left p-3 px-5">Categoria</th>
+                                    <th class="text-left p-3 px-5" style="margin-left: 25%">Image</th>
+                                    <th class="text-left p-3 px-5">Cantidad</th>
                                 </tr>
-                                @foreach($pedidos as $pedido)
-
+                                    @foreach ($platos as $plato)
                                     <tr class="border-b hover:bg-orange-100 bg-gray-100">
 
-                                        <td class="p-3  px-5">{{ $pedido->cliente->name}}</td>
-                                        <td class="p-3 px-5" >{{ $pedido->restaurante->nombre }}</td>
-                                        <td class="p-3 px-5" >{{ $pedido->estado }}</td>
-                                        <td class="p-3 px-5"><a href="{{Route('restaurante.verPlatos', $pedido->id)}}">x</a></td>
+                                        <td class="p-3  px-5">{{ $plato->nombre}}</td>
+                                        <td class="p-3 px-5" >{{ $plato->descripcion }}</td>
+                                        <td class="p-3 px-5" >{{ $plato->categoria }}</td>
+                                        <td class="p-3 px-5" style="width: 15%"><img src="{{ url('storage/plato/img', [$plato->foto]) }}" alt="error" width="60%"></td>
+                                        {{-- <td class="p-3 px-5" ><img src="{{url('storage/plato/img', [$plato->foto])}}" alt=""></td> --}}
+                                        {{-- <td class="p-3 px-5"><a href="{{Route('restaurante.verPlatos', $pedido->id)}}">x</a></td> --}}
                                     </tr>
 
                                 @endforeach
-
-
-                                @else
-                                    @if (Auth::user()->role->role == 'admin')
-                                        <h1 style="width: 100%; margin-left: 40%">Este Restaurante no tiene pedidos</h1>
-                                    @else
-                                        <h1 style="width: 100%; margin-left: 45%">No tienes pedidos </h1>
-                                    @endif
-                                @endif
 
                             </tbody>
                         </table>
@@ -214,7 +205,7 @@ dialog[open] {
         </div>
     </div>
      {{-- paginador --}}
-     {{ $pedidos->links() }}
+     {{-- {{ $platos->links() }} --}}
 
 
 

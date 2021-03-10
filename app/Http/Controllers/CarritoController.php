@@ -17,8 +17,7 @@ class CarritoController extends Controller
         foreach(Cart::getContent() as $item) {
             $platoCarro_id = $item->id;
             $platoCarro = Plato::find($platoCarro_id);
-            $restauranteCarro = $platoCarro->restaurante_id;
-            $restaurante = Restaurante::find($restauranteCarro);
+            $restaurante = Restaurante::find($platoCarro->restaurante_id);
         }
 
         if(!empty($restauranteCarro)){
