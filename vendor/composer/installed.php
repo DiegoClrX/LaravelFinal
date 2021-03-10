@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'b2251d67571a977c7c61c17a1f81aa6eb7c8ba73',
+    'reference' => '7f6d0d109623c472f5fceb49b4100bd56ca9c886',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -37,6 +37,15 @@
       array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
+    ),
+    'aws/aws-sdk-php' => 
+    array (
+      'pretty_version' => '3.173.25',
+      'version' => '3.173.25.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '69e4653acf8cd855e9010ec4e0e0a7d074c77ee1',
     ),
     'bacon/bacon-qr-code' => 
     array (
@@ -616,7 +625,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'b2251d67571a977c7c61c17a1f81aa6eb7c8ba73',
+      'reference' => '7f6d0d109623c472f5fceb49b4100bd56ca9c886',
     ),
     'laravel/sail' => 
     array (
@@ -662,6 +671,15 @@
       array (
       ),
       'reference' => '9be3b16c877d477357c015cec057548cf9b2a14a',
+    ),
+    'league/flysystem-aws-s3-v3' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd08659da9e1fef4c628783556d074f711555af4b',
     ),
     'league/mime-type-detection' => 
     array (
@@ -714,6 +732,15 @@
       array (
         0 => '^1.0',
       ),
+    ),
+    'mtdowling/jmespath.php' => 
+    array (
+      'pretty_version' => '2.6.0',
+      'version' => '2.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '42dae2cbd13154083ca6d70099692fef8ca84bfb',
     ),
     'myclabs/deep-copy' => 
     array (

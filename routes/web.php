@@ -56,6 +56,7 @@ Route::prefix('intranet')->middleware('auth')->group(function () {
         });
         Route::resource('usuarios', UsuarioController::class);
         Route::get('/pedido/{id}', [PedidoController::class, 'verPedidosCliente'])->name('pedido.cliente');
+        Route::get('/cliente/pedido/{id}', [PedidoController::class, 'verPlatoPedidoCliente'])->name('cliente.verPlatos');
 
     });
 

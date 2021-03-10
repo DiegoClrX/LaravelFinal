@@ -158,6 +158,7 @@ dialog[open] {
                         {{-- Pagina Anterior --}}
                         {{-- <a href="/intranet/restaurante/pedido/{{$restaurante_id}}/verPedidos" style="margin-right: -9%"> --}}
                         {{-- <a href="/intranet/restaurante/pedido/1/verPedidos" style="margin-right: -9%"> --}}
+                        <a href="{{Route('restaurante.vista')}}" style="margin-right: -9%">
                             <img width =15% style="margin-right: -10%; margin-top: 12%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik00OTIsMjM2SDY4LjQ0Mmw3MC4xNjQtNjkuODI0YzcuODI5LTcuNzkyLDcuODU5LTIwLjQ1NSwwLjA2Ny0yOC4yODRjLTcuNzkyLTcuODMtMjAuNDU2LTcuODU5LTI4LjI4NS0wLjA2OA0KCQkJbC0xMDQuNTA0LDEwNGMtMC4wMDcsMC4wMDYtMC4wMTIsMC4wMTMtMC4wMTgsMC4wMTljLTcuODA5LDcuNzkyLTcuODM0LDIwLjQ5Ni0wLjAwMiwyOC4zMTRjMC4wMDcsMC4wMDYsMC4wMTIsMC4wMTMsMC4wMTgsMC4wMTkNCgkJCWwxMDQuNTA0LDEwNGM3LjgyOCw3Ljc5LDIwLjQ5Miw3Ljc2MywyOC4yODUtMC4wNjhjNy43OTItNy44MjksNy43NjItMjAuNDkyLTAuMDY3LTI4LjI4NEw2OC40NDIsMjc2SDQ5Mg0KCQkJYzExLjA0NiwwLDIwLTguOTU0LDIwLTIwQzUxMiwyNDQuOTU0LDUwMy4wNDYsMjM2LDQ5MiwyMzZ6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
                         </a>
                         <h1 class="text-3xl" style="text-align: center; margin-top: 1%">
@@ -169,14 +170,6 @@ dialog[open] {
                                     <img class="w-5 h-5 text-white" src="{{ asset('img/pedido.png') }}"/>
                                 </button>
                             </a> --}}
-                            {{-- <a href="{{Route('pedido.actualizarEstado', $pedidos[0]->numPedido)}}"> --}}
-                                <div class="m-3">
-                                    <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-yellow-500 hover:border-yellow-600 hover:bg-yellow-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
-                                    <span class="mr-2">Pedido Terminado</span>
-                                    <img class="w-5 h-5 text-white" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxnPg0KCQkJPHBhdGggZD0iTTQ4MCw3NC42NjdoLTcyLjUzM2MtMTcuNjM0LTMwLjYzMy01Ni43NjItNDEuMTcyLTg3LjM5NS0yMy41MzhjLTkuNzg1LDUuNjMzLTE3LjkwNSwxMy43NTMtMjMuNTM4LDIzLjUzOEgyNTZ2LTY0DQoJCQkJQzI1Niw0Ljc3NiwyNTEuMjI0LDAsMjQ1LjMzMywwaC0xOTJjLTUuODkxLDAtMTAuNjY3LDQuNzc2LTEwLjY2NywxMC42Njd2NjRIMzJjLTE3LjY3MywwLTMyLDE0LjMyNy0zMiwzMlYzODQNCgkJCQljMCwxNy42NzMsMTQuMzI3LDMyLDMyLDMyaDE2MHYyNi41NmMtMjEuNTMyLDcuMzUzLTM3LjQzMSwyNS43MzktNDEuNiw0OC4xMDdIMTI4VjUxMmgyNTZ2LTIxLjMzM2gtMjIuNA0KCQkJCWMtNC4xNjktMjIuMzY4LTIwLjA2OC00MC43NTMtNDEuNi00OC4xMDdWNDE2aDE2MGMxNy42NzMsMCwzMi0xNC4zMjcsMzItMzJWMTA2LjY2N0M1MTIsODguOTk0LDQ5Ny42NzMsNzQuNjY3LDQ4MCw3NC42Njd6DQoJCQkJIE0zNTIsNjRjMjMuNTY0LDAsNDIuNjY3LDE5LjEwMyw0Mi42NjcsNDIuNjY3YzAsMzUuNDEzLTE5LjA5Myw2NC00Mi42NjcsNjRjLTIzLjU3MywwLTQyLjY2Ny0yOC45MDctNDIuNjY3LTY0DQoJCQkJQzMwOS4zMzMsODMuMTAzLDMyOC40MzYsNjQsMzUyLDY0eiBNMzk0LjY2NywyNTZ2NTMuMzMzaC04NS4zMzNWMjU2SDI4OHY1My4zMzNoLTIxLjMzM3YtNjRjMC0xNy42NzMsMTQuMzI3LTMyLDMyLTMyDQoJCQkJYzE2LjM1OSwwLjIxNiwzMS40LTguOTQyLDM4LjcyLTIzLjU3M2M5LjU0NywzLjAwNSwxOS43ODYsMy4wMDUsMjkuMzMzLDBjNy4zMDMsMTQuNTk2LDIyLjI5MywyMy43NDgsMzguNjEzLDIzLjU3Mw0KCQkJCWMxNy42NzMsMCwzMiwxNC4zMjcsMzIsMzJ2NjRINDE2VjI1NkgzOTQuNjY3eiBNNjQsMjEuMzMzaDE3MC42Njd2MTQ5LjMzM2gtMzJjLTUuODkxLDAtMTAuNjY3LDQuNzc2LTEwLjY2NywxMC42Njd2MTkuNjI3DQoJCQkJbC0zMi44NTMtMjcuODRjLTEuOTMyLTEuNjUyLTQuMzkxLTIuNTYtNi45MzMtMi41Nkg2NFYyMS4zMzN6IE0yMS4zMzMsMTA2LjY2N0MyMS4zMzMsMTAwLjc3NiwyNi4xMDksOTYsMzIsOTZoMTAuNjY3djg1LjMzMw0KCQkJCWMwLDUuODkxLDQuNzc2LDEwLjY2NywxMC42NjcsMTAuNjY3aDk1LjA0bDQ3LjQ2Nyw0MC4xMDdjNC41MjYsMy43NywxMS4yNTIsMy4xNTgsMTUuMDIzLTEuMzY5DQoJCQkJYzEuNTc3LTEuODkzLDIuNDUtNC4yNzQsMi40NzEtNi43Mzh2LTMyaDMyYzUuODkxLDAsMTAuNjY3LTQuNzc2LDEwLjY2Ny0xMC42NjdWOTZoMzIuOTZjLTAuNjIxLDMuNTIyLTAuOTQyLDcuMDktMC45NiwxMC42NjcNCgkJCQljLTEuMTc3LDI3LjY4NSw5Ljk1Miw1NC40NzMsMzAuNCw3My4xNzNjLTMuNjEsNy41ODUtMTEuMzM1LDEyLjM0NS0xOS43MzMsMTIuMTZjLTI5LjQ1NSwwLTUzLjMzMywyMy44NzgtNTMuMzMzLDUzLjMzM3Y2NGgtMjI0DQoJCQkJVjEwNi42Njd6IE0zMzkuNjI3LDQ5MC42NjdIMTcyLjM3M2MzLjczMy0xMi44LDE1LjI1My0zMiw1MS42MjctMzJoMzJ2LTIxLjMzM2gtMzJjLTMuNzMzLDAtNy4yNTMsMC0xMC42NjcsMFY0MTZoODUuMzMzdjIxLjMzMw0KCQkJCWMtMy40MTMsMC02LjkzMywwLTEwLjY2NywwdjIxLjMzM0MzMjQuMzczLDQ1OC42NjcsMzM1Ljg5Myw0NzcuODY3LDMzOS42MjcsNDkwLjY2N3ogTTQ5MC42NjcsMzg0DQoJCQkJYzAsNS44OTEtNC43NzYsMTAuNjY3LTEwLjY2NywxMC42NjdIMzJjLTUuODkxLDAtMTAuNjY3LTQuNzc2LTEwLjY2Ny0xMC42Njd2LTUzLjMzM2g0NjkuMzMzVjM4NHogTTQ5MC42NjcsMzA5LjMzM2gtMzJ2LTY0DQoJCQkJYzAtMjkuNDU1LTIzLjg3OC01My4zMzMtNTMuMzMzLTUzLjMzM2MtOC40NzMsMC4xMjgtMTYuMjE4LTQuNzctMTkuNzMzLTEyLjQ4YzIwLjM2MS0xOC42MjcsMzEuNDgyLTQ1LjI3OSwzMC40LTcyLjg1Mw0KCQkJCWMtMC4wMTgtMy41NzYtMC4zMzktNy4xNDUtMC45Ni0xMC42NjdINDgwYzUuODkxLDAsMTAuNjY3LDQuNzc2LDEwLjY2NywxMC42NjdWMzA5LjMzM3oiLz4NCgkJCTxyZWN0IHg9IjQyLjY2NyIgeT0iMzUyIiB3aWR0aD0iMjEuMzMzIiBoZWlnaHQ9IjIxLjMzMyIvPg0KCQkJPHJlY3QgeD0iNzQuNjY3IiB5PSIzNTIiIHdpZHRoPSIyMS4zMzMiIGhlaWdodD0iMjEuMzMzIi8+DQoJCQk8cmVjdCB4PSIxMDYuNjY3IiB5PSIzNTIiIHdpZHRoPSIyMS4zMzMiIGhlaWdodD0iMjEuMzMzIi8+DQoJCQk8cmVjdCB4PSI5NiIgeT0iNjQiIHdpZHRoPSIxMDYuNjY3IiBoZWlnaHQ9IjIxLjMzMyIvPg0KCQkJPHJlY3QgeD0iOTYiIHk9IjEwNi42NjciIHdpZHRoPSIxMDYuNjY3IiBoZWlnaHQ9IjIxLjMzMyIvPg0KCQk8L2c+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
-                                    </button>
-                                </div>
-                            </a>
                     </div>
                     <div class="px-3 py-4 flex justify-center">
 
@@ -187,27 +180,22 @@ dialog[open] {
                                 @if ($pedidos->count() != 0)
 
                                 <tr class="border-b">
-                                    <th class="text-left p-3 px-5">Nombre Plato</th>
+                                    <th class="text-left p-3 px-5">Restaurante</th>
+                                    <th class="text-left p-3 px-5">Direccion restaurante</th>
                                     {{-- <th class="text-left p-3 px-5" style="margin-left: 25%">Image</th> --}}
-                                    <th class="text-left p-3 px-5">Cantidad</th>
                                     <th class="text-left p-3 px-5">Estado</th>
+                                    <th class="text-left p-3 px-5">Platos</th>
                                 </tr>
                                 @foreach($pedidos as $pedido)
 
-                                    {{-- @foreach ($pedido->platos as $plato) --}}
-
                                     <tr class="border-b hover:bg-orange-100 bg-gray-100">
 
-                                        {{-- <td class="p-3 px-5">{{$pedido->platos->nombre}}</td> --}}
-                                        <td class="p-3 px-5"></td>
-                                        <td class="p-3 px-5" >{{ $pedido->cantidad }}</td>
+                                        <td class="p-3 px-5" >{{ $pedido->restaurante->nombre }}</td>
+                                        <td class="p-3 px-5" >{{ $pedido->restaurante->direccion }}</td>
                                         <td class="p-3 px-5" >{{ $pedido->estado }}</td>
-                                        <td class="p-3 px-5">
-
-                                        </td>
+                                        <td class="p-3 px-5"><a href="{{Route('cliente.verPlatos', $pedido->id)}}">x</a></td>
                                     </tr>
 
-                                    {{-- @endforeach --}}
 
                                 @endforeach
 

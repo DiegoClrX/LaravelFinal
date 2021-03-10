@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Http\Middleware\CheckRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestauranteController extends Controller
 {
@@ -50,6 +51,11 @@ class RestauranteController extends Controller
 
         $nombre = Auth::id(). "-" . $request->file('foto')->getClientOriginalName();
         $request->foto->storeAs('/restaurantes/img', $nombre);
+
+        // $file = $request->file('image');
+        // $filePath = 'img/' . $nombre;
+        // Storage::disk('s3')->put($filePath, file_get_contents($file));
+
 
         $restaurante = new Restaurante;
         $restaurante->nombre = $entrada['name'];
@@ -101,10 +107,14 @@ class RestauranteController extends Controller
     {
         $restaurante = Restaurante::findOrFail($id);
 
+        $nombre = Auth::id(). "-" . $request->file('foto')->getClientOriginalName();
+        $request->foto->storeAs('/restaurantes/img', $nombre);
+
         $restaurante->nombre = $request->name;
         $restaurante->direccion = $request->address;
         $restaurante->ciudad = $request->city;
         $restaurante->telefono = $request->telefono;
+        $restaurante->foto = $nombre;
         $restaurante->longitud = $request->longitud;
         $restaurante->latitud = $request->latitud;
         $restaurante->user_id = Auth::id();

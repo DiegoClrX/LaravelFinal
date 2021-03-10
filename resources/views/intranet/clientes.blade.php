@@ -162,19 +162,6 @@ dialog[open] {
                         <h1 class="text-3xl" style="text-align: center; margin-top: 1%">
                             usuarios
                         </h1>
-                         {{-- BOTON PARA CREAR usuario --}}
-                    <div class="p-2 md:w-40 " style="width: 11%; margin-left: 70%" onclick="openModalNew()">
-                        <div class="flex items-center p-4 bg-red-200 rounded-lg shadow-xs cursor-pointer hover:bg-red-500 hover:text-gray-100">
-
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <div>
-                              <p class=" text-xs font-medium ml-2">
-                                New Foot
-                              </p>
-
-                            </div>
-                        </div>
-                    </div>
 
                     </div>
 

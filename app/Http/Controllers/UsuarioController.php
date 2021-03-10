@@ -60,18 +60,18 @@ class UsuarioController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $restaurante = User::findOrFail($id);
+        $usuario = User::findOrFail($id);
 
-        $restaurante->name = $request->name;
-        $restaurante->lastname = $request->lastname;
-        $restaurante->address = $request->address;
-        $restaurante->city = $request->city;
-        $restaurante->movil = $request->movil;
-        $restaurante->dni = $request->dni;
-        $restaurante->email = $request->email;
-        $restaurante->password = $request->password;
-        $restaurante->user_id = $id;
-        $restaurante->save();
+        $usuario->name = $request->name;
+        $usuario->lastname = $request->lastname;
+        $usuario->address = $request->address;
+        $usuario->city = $request->city;
+        $usuario->movil = $request->movil;
+        $usuario->dni = $request->dni;
+        $usuario->email = $request->email;
+        $usuario->password = $request->password;
+        $usuario->user_id = $id;
+        $usuario->save();
 
         return redirect()->action(
             [UsuarioController::class, 'index']
@@ -87,7 +87,22 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $usuario = User::findOrFail($id);
+
+        $usuario->name = $request->name;
+        $usuario->lastname = $request->lastname;
+        $usuario->address = $request->address;
+        $usuario->city = $request->city;
+        $usuario->movil = $request->movil;
+        $usuario->dni = $request->dni;
+        $usuario->email = $request->email;
+        $usuario->password = $request->password;
+        $usuario->save();
+
+        return redirect()->action(
+            [UsuarioController::class, 'index']
+        );
     }
 
     /**

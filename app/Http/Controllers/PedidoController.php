@@ -80,7 +80,6 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $platos = $pedido->platos;
         return view('intranet.pedido.platos', ['platos'=>$platos]);
-
     }
 
     /**

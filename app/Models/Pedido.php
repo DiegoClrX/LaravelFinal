@@ -13,7 +13,7 @@ class Pedido extends Model
 
 
     public function platos(){
-        return $this->belongsToMany(Plato::class, 'plato_pedido', 'platos_id', 'pedido_id');
+        return $this->belongsToMany(Plato::class, 'plato_pedido', 'platos_id', 'pedido_id')->withPivot('cantidad');
     }
 
     // public function repartidor(){

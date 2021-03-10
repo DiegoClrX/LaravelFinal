@@ -6,7 +6,7 @@
     <div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
     style="background: rgba(0,0,0,.7); width: 100%; overflow: scroll">
     <div  style="width: 40%; height:150px; margin-top: -30%">
-        <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700" style="max-width: 600px; height: 850px">
+        <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700" style="max-width: 600px; height: 700px">
             <div class="w-full pt-1 pb-5">
                 <div class="bg-indigo-500 text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
                     <img src={{ asset('img/theUnion.png') }} alt="error">
@@ -15,32 +15,32 @@
 
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{$usuarios->name}}" required autofocus autocomplete="name"  />
             </div>
 
             <div>
                 <x-jet-label for="lastname" value="{{ __('Lastname') }}" />
-                <x-jet-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" />
+                <x-jet-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" value="{{$usuarios->lastname}}" required autofocus autocomplete="lastname" />
             </div>
 
             <div>
                 <x-jet-label for="address" value="{{ __('address') }}" />
-                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus autocomplete="address" />
+                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" value="{{$usuarios->address}}" required autofocus autocomplete="address" />
             </div>
 
             <div>
                 <x-jet-label for="city" value="{{ __('city') }}" />
-                <x-jet-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required autofocus autocomplete="city" />
+                <x-jet-input id="city" class="block mt-1 w-full" type="text" name="city" value="{{$usuarios->city}}" required autofocus autocomplete="city" />
             </div>
 
             <div>
                 <x-jet-label for="movil" value="{{ __('Movil') }}" />
-                <x-jet-input id="movil" class="block mt-1 w-full" type="number" name="movil" :value="old('movil')" required autofocus autocomplete="movil" />
+                <x-jet-input id="movil" class="block mt-1 w-full" type="number" name="movil" value="{{$usuarios->movil}}" required autofocus autocomplete="movil" />
             </div>
 
             <div>
                 <x-jet-label for="dni" value="{{ __('DNI') }}" />
-                <x-jet-input id="dni" class="block mt-1 w-full" type="text" name="dni" :value="old('dni')" required autofocus autocomplete="dni" />
+                <x-jet-input id="dni" class="block mt-1 w-full" type="text" name="dni" value="{{$usuarios->dni}}" required autofocus autocomplete="dni" />
             </div>
 
             <div>
@@ -50,22 +50,13 @@
                     <option value="4">Cliente</option>
                     <option value="2">G.Restaurante</option>
                     <option value="3">Repartidor</option>
+                    <option value="1">admin</option>
                 </select>
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" value="{{$usuarios->email}}" required />
             </div>
                         <!--Footer-->
 

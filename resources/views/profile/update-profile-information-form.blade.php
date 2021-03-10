@@ -58,12 +58,42 @@
             <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
             <x-jet-input-error for="name" class="mt-2" />
         </div>
+        <!-- lastname -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="lastname" value="{{ __('Apellidos') }}" />
+            <x-jet-input id="lastname" type="text" class="mt-1 block w-full" wire:model.defer="state.lastname" autocomplete="lastname" />
+            <x-jet-input-error for="lastname" class="mt-2" />
+        </div>
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="email" value="{{ __('Email') }}" />
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
+        </div>
+        <!-- Address -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="address" value="{{ __('Direccion') }}" />
+            <x-jet-input id="address" type="text" class="mt-1 block w-full" wire:model.defer="state.address" />
+            <x-jet-input-error for="address" class="mt-2" />
+        </div>
+        <!-- city -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="city" value="{{ __('Ciudad') }}" />
+            <x-jet-input id="city" type="text" class="mt-1 block w-full" wire:model.defer="state.city" />
+            <x-jet-input-error for="city" class="mt-2" />
+        </div>
+        <!-- movil -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="movil" value="{{ __('Movil') }}" />
+            <x-jet-input id="movil" type="number" class="mt-1 block w-full" wire:model.defer="state.movil" />
+            <x-jet-input-error for="movil" class="mt-2" />
+        </div>
+        <!-- dni -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="dni" value="{{ __('DNI') }}" />
+            <x-jet-input id="dni" type="text" class="mt-1 block w-full" wire:model.defer="state.dni" />
+            <x-jet-input-error for="dni" class="mt-2" />
         </div>
     </x-slot>
 

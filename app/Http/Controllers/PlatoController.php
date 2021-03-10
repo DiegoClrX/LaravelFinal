@@ -99,11 +99,10 @@ class PlatoController extends Controller
     public function update(Request $request, $id)
     {
         $entrada = $request->all();
-
+        $plato = Plato::find($id);
         $nombre = $entrada['restaurante_id'] . "-" . $request->file('foto')->getClientOriginalName();
         $request->foto->storeAs('/plato/img', $nombre);
 
-        $plato = new Plato;
         $plato->nombre = $entrada['nombre'];
         $plato->descripcion = $entrada['descripcion'];
         $plato->foto = $nombre;

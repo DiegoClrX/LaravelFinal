@@ -25,38 +25,46 @@
                 <div class="mb-3">
                     <label class="font-bold text-sm mb-2 ml-1">Name of Restaurant</label>
                     <div>
-                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="text" name = 'name' placeholder="{{$restaurante->nombre}}"/>
+                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="text" name = 'name' value="{{$restaurante->nombre}}"/>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="font-bold text-sm mb-2 ml-1">Address of Restaurant</label>
                     <div>
-                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="address" type="text" placeholder="{{$restaurante->direccion}}"/>
+                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="address" type="text" value="{{$restaurante->direccion}}"/>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="font-bold text-sm mb-2 ml-1">City</label>
                     <div>
-                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="city" type="text" placeholder="{{$restaurante->ciudad}}"/>
+                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="city" type="text" value="{{$restaurante->ciudad}}"/>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="font-bold text-sm mb-2 ml-1">Telefono</label>
                     <div>
-                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="telefono" type="text" placeholder="{{$restaurante->telefono}}"/>
+                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="telefono" type="text" value="{{$restaurante->telefono}}"/>
                     </div>
                 </div>
+
+                <div class="mb-3">
+                    <label class="font-bold text-sm mb-2 ml-1">Image</label>
+                    <div>
+                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="foto" type="file"/>
+                    </div>
+                </div>
+
                 <div class="mb-3">
                     <label class="font-bold text-sm mb-2 ml-1">Latitud</label>
                     <div>
-                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="latitud" type="text" placeholder="{{$restaurante->latitud}}"/>
+                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="latitud" type="text" value="{{$restaurante->latitud}}"/>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label class="font-bold text-sm mb-2 ml-1">Longitud</label>
                     <div>
-                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="longitud" type="text" placeholder="{{$restaurante->longitud}}"/>
+                        <input class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" name="longitud" type="text" value="{{$restaurante->longitud}}"/>
                     </div>
                 </div>
                         <!--Footer-->
