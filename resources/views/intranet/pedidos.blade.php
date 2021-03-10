@@ -192,8 +192,18 @@ dialog[open] {
                                         <td class="p-3  px-5">{{ $pedido->cliente->name}}</td>
                                         <td class="p-3 px-5" >{{ $pedido->restaurante->nombre }}</td>
                                         <td class="p-3 px-5" >{{ $pedido->estado }}</td>
-                                        <td class="p-3 px-5"><a href="{{Route('restaurante.verPlatos', $pedido->id)}}">x</a></td>
-                                        <td class="p-3 px-5"><a href="{{Route('pedido.actualizarEstado', $pedido->id)}}">x</a></td>
+                                        <td class="p-3 px-5" style="width: 10%">
+                                            <a href="{{Route('restaurante.verPlatos', $pedido->id)}}">
+                                                <button class="inline-block p-3 text-center text-white transition bg-gray-500 rounded-full shadow ripple hover:shadow-lg hover:bg-gray-600 focus:outline-none">
+                                                    <img class="w-5 h-5 text-white" src="{{ asset('img/pedidoPlatos.png') }}"/>
+                                            </button>
+                                            </a>
+                                            </td>
+                                        <td class="p-3 px-5"><a href="{{Route('pedido.actualizarEstado', $pedido->id)}}">
+                                            <button class="inline-block p-3 text-center text-white transition bg-gray-500 rounded-full shadow ripple hover:shadow-lg hover:bg-gray-600 focus:outline-none">
+                                                <img class="w-5 h-5 text-white" src="{{ asset('img/realizado.png') }}"/>
+                                                </button>
+                                    </a></td>
                                     </tr>
 
                                 @endforeach
