@@ -22,7 +22,7 @@ class AdminSeeder extends Seeder
             'movil' => 654654987,
             'dni' => "45645456T",
             'email' => "admin@theunion.com",
-            'password' => "12345678",
+            'password' => bcrypt('12345678'),
             'role_id' => 1,
         ]);
     }
