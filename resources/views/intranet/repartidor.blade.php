@@ -181,27 +181,19 @@ dialog[open] {
                                     <th class="text-left p-3 px-5">Direccion Cliente</th>
                                 </tr>
 
-                                @php
-                                    $aux = 0;
-                                @endphp
-
                             @foreach($pedidos as $pedido)
-                            @foreach ($pedido->restaurantes() as $restaurante)
-                            @if ($pedido->numPedido != $aux)
+                            {{-- @foreach ($pedido->restaurantes as $restaurante) --}}
                             <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                                <td class="p-3 px-5"> {{ $pedido->numPedido }}</td>
-                                {{-- <td class="p-3 px-5" >{{ $restaurante->nombre }}</td>
-                                <td class="p-3 px-5" >{{ $restaurante->ciudad }}</td>
-                                <td class="p-3 px-5" >{{ $restaurante->direccion }}</td> --}}
-                                @foreach ($pedido->users() as $user)
-                                {{-- <td class="p-3 px-5" >{{ $user->address }}</td> --}}
-                                @endforeach
+                                <td class="p-3 px-5"> {{ $pedido->restaurante->nombre }}</td>
+                                <td class="p-3 px-5" >{{ $pedido->restaurante->ciudad }}</td>
+                                <td class="p-3 px-5" >{{ $pedido->restaurante->direccion }}</td>
+                                <td class="p-3 px-5" >{{ $pedido->cliente->address }}</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="p-3 px-5 flex justify-end">
                                         {{-- BOTON PARA ACTUALIZAR EL PALTO --}}
-                                        <a href="{{Route('pedidos.agenciar', $pedido->numPedido)}}">
+                                        {{-- <a href="{{Route('pedidos.agenciar', $pedido->numPedido)}}"> --}}
                                         {{-- <a href=""> --}}
                                             <button class="inline-block p-3 text-center text-white transition bg-purple-500 rounded-full shadow ripple hover:shadow-lg hover:bg-purple-600 focus:outline-none">
                                                     <img class="w-5 h-5 text-white" src="{{ asset('img/repartidor.png') }}"/>
@@ -209,11 +201,6 @@ dialog[open] {
                                         </a>
                                 </td>
                             </tr>
-                                @php
-                                    $aux = $pedido->numPedido;
-                                @endphp
-                            @endif
-                            @endforeach
 
                                 @endforeach
 
@@ -225,8 +212,9 @@ dialog[open] {
                                         <h1 style="width: 100%; margin-left: 40%">No hay pedidos actualmente</h1>
                                     @endif
                                 @endif
-     {{-- paginador --}}
-     {{ $pedidos->links() }}
+                                {{-- paginador --}}
+                                {{ $pedidos->links() }}
+                            </div>
 
 </x-app-layout>
 

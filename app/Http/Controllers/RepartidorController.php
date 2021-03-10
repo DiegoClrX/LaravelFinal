@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pedido;
 use App\Models\Repartidor;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,6 +43,33 @@ class RepartidorController extends Controller
         $pedidos = Pedido::where('repartidor_id','=',Auth::id())->paginate(5);
         return view('intranet.repartidor.verMisPedidos', ['pedidos' => $pedidos]);
     }
+
+    public function cambiarEstado(Request $request){
+        $repartidor = Auth::user();
+        $pedidos = Pedido::where('repartidor_id','=',Auth::id())->paginate(5);
+        $repartidor->estado = $request->estado;
+        $repartidor->save();
+
+        return view('intranet.repartidor.verMisPedidos', ['pedidos' => $pedidos]);
+    }
+
+    public function actualizarPedidoEntregado($id){
+        $pedido = Pedido::find($id);
+           $restaurante = $pedido->restaurante_id;
+           $repartidor = Auth::user();
+               $pedido->user_id = $pedido->user_id;
+               $pedido->restaurante_id = $pedido->restaurante_id;
+               $pedido->repartidor_id = $repartidor->id;
+               $pedido->estado = 'entregado';
+               $pedido->save();
+
+               $repartidor->estado = 'libre';
+               $repartidor->save();
+
+           return redirect()->action(
+               [RepartidorController::class, 'verMisPedidos'], ['id'=>$restaurante]
+           );
+       }
 
     /**
      * Show the form for creating a new resource.

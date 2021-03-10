@@ -40,36 +40,29 @@ class PedidoController extends Controller
     }
 
     public function actualizarPedidoRealizado($id){
-        $pedidos = Pedido::where('numPedido','=',$id)->paginate(5);
-        // $repartidor = Repartidor::where('estado', '=', 'libre');
-        $restaurante = $pedidos[0]->restaurante_id;
-        foreach($pedidos as $pedido){
+        $pedido = Pedido::find($id);
+        $restaurante = $pedido->restaurante_id;
+        $repartidor = User::where('estado','=','libre')->paginate(5);
+        if(!(empty($repartidor[0]))){
             $pedido->user_id = $pedido->user_id;
             $pedido->restaurante_id = $pedido->restaurante_id;
-            $pedido->repartidor_id = $pedido->repartidor_id;
+            $pedido->repartidor_id = $repartidor[0]->id;
             $pedido->estado = 'finalizado';
             $pedido->save();
-        }
+
+            $repartidor[0]->estado = 'ocupado';
+            $repartidor[0]->save();
 
         return redirect()->action(
-            [PedidoController::class, 'verPedidosRestaurante'], ['id'=>$restaurante]
+            [PedidoController::class, 'verPedidosNumero'], ['id'=>$restaurante]
         );
-    }
-    public function actualizarPedidoEntregado($id){
-        $pedidos = Pedido::where('numPedido','=',$id)->paginate(5);
-        $restaurante = $pedidos[0]->restaurante_id;
-        foreach($pedidos as $pedido){
-            $pedido->user_id = $pedido->user_id;
-            $pedido->restaurante_id = $pedido->restaurante_id;
-            $pedido->repartidor_id = $pedido->repartidor_id;
-            $pedido->estado = 'entregado';
-            $pedido->save();
         }
-
-        return redirect()->action(
-            [PedidoController::class, 'verPedidosRestaurante'], ['id'=>$restaurante]
-        );
+        else{
+            return redirect()->back()->withErrors(['Todos los repartidores estan ocupados pruebe mas tarde']);
+        }
     }
+
+
 
     public function verPedidosCliente($id){
         $pedidos = Pedido::where('user_id','=',$id)->paginate(7);
@@ -79,12 +72,14 @@ class PedidoController extends Controller
     public function verPlatosPedido($id){
         $pedido = Pedido::find($id);
         $platos = $pedido->platos;
-        return view('intranet.pedido.platos', ['platos'=>$platos]);
+        $restaurante_id = $pedido->restaurante_id;
+        return view('intranet.pedido.platos', ['platos'=>$platos, "restaurante_id"=>$restaurante_id]);
     }
+
     public function verPlatoPedidoCliente($id){
         $pedido = Pedido::find($id);
         $platos = $pedido->platos;
-        return view('intranet.pedido.platos', ['platos'=>$platos]);
+        return view('intranet.clientes.platos', ['platos'=>$platos]);
     }
 
     /**

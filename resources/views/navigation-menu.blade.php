@@ -75,9 +75,6 @@
                             </x-jet-dropdown-link>
                             @endif
                             @if (Auth::user()->role->role == 'repartidor')
-                            <x-jet-dropdown-link href="{{Route('repartidor.index')}}">
-                                {{ __('Pedidos') }}
-                            </x-jet-dropdown-link>
 
                             <x-jet-dropdown-link href="{{Route('repartidor.misPedidos')}}">
                                 {{ __('Mis Pedidos') }}

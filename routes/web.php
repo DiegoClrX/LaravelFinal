@@ -44,9 +44,9 @@ Route::prefix('intranet')->middleware('auth')->group(function () {
         Route::get('/pedido/{id}/verPedidos', [PedidoController::class, 'verPedidosNumero'])->name('restaurante.verPedidos');
         Route::get('/pedido/{id}/verPlatos', [PedidoController::class, 'verPlatosPedido'])->name('restaurante.verPlatos');
 
-        Route::get('/pedido/{numPedido}/actualizar', [PedidoController::class, 'actualizarPedidoRealizado'])->name('pedido.actualizarEstado');
+        Route::get('/pedido/{id}/actualizar', [PedidoController::class, 'actualizarPedidoRealizado'])->name('pedido.actualizarEstado');
         //Ver pedido por numero
-        Route::get('/pedido/{numPedido}', [PedidoController::class, 'verPedidosNumero']);
+        Route::get('/pedido/{id}', [PedidoController::class, 'verPedidosNumero']);
 
     });
 
@@ -66,8 +66,9 @@ Route::prefix('intranet')->middleware('auth')->group(function () {
             return view('intranet.repartidores');
         });
         Route::resource('repartidor', RepartidorController::class);
-        Route::get('/agenciar/{id}',[RepartidorController::class, 'agenciarRepartidor'])->name('pedidos.agenciar');
         Route::get('/misPedidos',[RepartidorController::class, 'verMisPedidos'])->name('repartidor.misPedidos');
+        Route::get('/cambiar/estado',[RepartidorController::class, 'cambiarEstado'])->name('estado.repartidor');
+        Route::get('/misPedidos/{id}/entregado',[RepartidorController::class, 'actualizarPedidoEntregado'])->name('pedidos.entregado');
     });
 
 });
