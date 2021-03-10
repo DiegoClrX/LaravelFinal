@@ -81,6 +81,11 @@ class PedidoController extends Controller
         $platos = $pedido->platos;
         return view('intranet.pedido.platos', ['platos'=>$platos]);
     }
+    public function verPlatoPedidoCliente($id){
+        $pedido = Pedido::find($id);
+        $platos = $pedido->platos;
+        return view('intranet.pedido.platos', ['platos'=>$platos]);
+    }
 
     /**
      * Show the form for creating a new resource.
