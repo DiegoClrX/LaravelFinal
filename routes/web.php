@@ -38,7 +38,7 @@ Route::prefix('intranet')->middleware('auth')->group(function () {
 
         //Platos
         Route::resource('platos', PlatoController::class);
-        Route::get('/restaurante/{id}/platos', [PlatoController::class, 'verPlatosRestaurant']);
+        Route::get('/restaurante/{id}/platos', [PlatoController::class, 'verPlatosRestaurant'])->name('platos.restaurante');
 
         //Ver pedidos del restaurante
         Route::get('/pedido/{id}/verPedidos', [PedidoController::class, 'verPedidosNumero'])->name('restaurante.verPedidos');

@@ -11,8 +11,8 @@
     @csrf
     @method('PUT')
     <div class="update-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
-        style="background: rgba(0,0,0,.7); width: 100%">
-        <div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center px-5 pb-10 pt-16" style="width: 100%; height:150px">
+        style="background: rgba(0,0,0,.7); width: 100%; overflow: scroll;">
+        <div  style="width: 40%; height:150px; margin-top: -30%">
             <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700" style="max-width: 600px;">
                 <div class="w-full pt-1 pb-5">
                     <div class="bg-indigo-500 text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">

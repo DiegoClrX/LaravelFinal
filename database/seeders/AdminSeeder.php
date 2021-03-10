@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
             'address' => "admin",
             'city' => "admin",
             'movil' => 654654987,
-            'dni' => "45645456T",
+            'dni' => "45645456H",
             'email' => "admin@theunion.com",
             'password' => bcrypt('12345678'),
             'role_id' => 1,
